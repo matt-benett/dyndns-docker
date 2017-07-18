@@ -31,7 +31,7 @@ function updateDomain() {
     -H "X-Auth-Email: ${CF_EMAIL}" \
     -H "X-Auth-Key: ${CF_TOKEN}" \
     -H "Content-Type: application/json" \
-    --data '{"type":"A","name":"'${CF_DOMAIN_NAME}'","content":"'${EXTERNAL_IP}'","ttl":1,"proxied":false}')
+    --data '{"type":"A","name":"'${CF_DOMAIN_NAME}'","content":"'${EXTERNAL_IP}'","ttl":1,"proxied":true}')
 
  local RESULT=$(echo "${JSON}" | jq .success)
 
